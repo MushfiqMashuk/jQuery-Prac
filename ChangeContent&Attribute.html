@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Change Content & Attributes</title>
+
+    <style>
+        
+            .facebook{
+    
+                background-color: #0686FD;
+                padding: 5px;
+                width: auto;
+                color: azure;
+                height: auto;
+            }
+    
+            .google{
+                
+                background-color: aqua;
+                height: auto;
+                width: auto;
+                color: azure;
+                padding: 10px;
+            }
+    
+            #span{
+                color:crimson;
+                font-size: 30px;
+                
+            }
+    
+            .youtube{
+                background-color:rgb(28, 172, 141);
+                height: auto;
+                width: auto;
+                color: azure;
+            }
+    
+            td{
+                border: 10px solid rgba(128, 128, 128, 0);
+            }
+        
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script>
+            
+            $(function(){
+
+                $("#changeFacebook").click(function(){
+                    
+                    $("#facebook").text("I have changed the div content");
+
+                });
+
+                $("#changeGoogle").click(function(){
+
+                    $("#google").html("<p> I have changed the div content</p> <h3>Nice Try Man</h3>");
+
+                });
+
+
+                $("#changeAttr").click(function(){
+                    
+                    $("#googleA").attr({title: "Facebook", href: "https://facebook.com"});
+
+                });
+
+                $("#createElement").click(function(){
+
+                    //Creates & Appends New Element as a last child of facebook div
+                    $("#facebook").append("<ul><li>Scarlet Witch</li><li>Black Widow</li></ul>");
+
+                    //Creates & Appends New Element as a First child of facebook div
+                    $("#facebook").prepend("<ul><li>Thor</li><li>Iron Man</li></ul>");
+
+                    //Creates & Appends New Element before facebook div
+                    $("#facebook").before("<p>Facebook Div Starts here</p>");
+
+                    //Creates & Appends New Element after facebook div
+                    $("#facebook").after("<p>Facebook Div Ends here</p>");
+
+                    
+
+                });
+
+                console.log(Math.floor(Math.random()*101-50));
+
+            });
+
+        
+        
+        </script>
+    
+</head>
+<body>
+
+    <div class="facebook" id="facebook">
+        <p>This is another Paragraph</p>
+        <p>Facebook is <span id="span">Awesome</span>
+            <div><p>This 'P' element is Not a direct child</p></div>
+        </p>
+        <h2>This is a Heading</h2>
+    </div>
+    <p>This is a Normal Paragraph</p>
+    <div class="google" id="google">
+            <p><a href="https://google.com" title="Google" target="_blank" id="googleA">Google</a></p>
+            <p>Instagram</p>
+            <p><a href="https://microsoft.com" target="_blank" title="Microsoft">Microsoft</a></p>
+
+            <ul>
+                <li>MIT</li>
+                <li>Princeton</li>
+                <li>Harvard</li>
+                <li>Zurikh Politecnic</li>
+            </ul>
+
+        <p>This is some input field <input type="text" id="input"><button type="submit" id="submit">Submit</button> <span id="validation"></span></p>
+        <p></p>
+
+
+    </div>
+
+    
+    <div class="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+        <table>
+
+            <tr><th>Product ID</th> <th>Product Name</th> <th>Brand Name</th></tr>
+
+            <tr><td>01</td> <td>Mutton Kachchi</td> <td>Sultan's Dine</td></tr>
+
+            <tr><td>02</td> <td>Mutton Kachchi</td> <td>Kolkata Biryani House</td></tr>
+
+            <tr><td>03</td> <td>Sharbat(Pesta Badam)</td> <td>Royal Restaurant</td></tr>     
+
+
+        </table>
+    </div>
+
+    <button style="cursor: pointer;" id="changeFacebook">Change Facebook Div Content</button>
+
+    <button style="cursor: pointer;" id="changeGoogle">Change Google Div Content</button>
+
+    <button style="cursor: pointer;" id="changeAttr">Change Attribute of Anchor Tags</button>
+
+    <button style="cursor: pointer;" id="createElement">Create New Element</button>
+
+</body>
+</html>

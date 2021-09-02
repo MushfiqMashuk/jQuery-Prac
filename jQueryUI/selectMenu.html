@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Select Menu</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: 300px;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            
+            $("#planet").selectmenu();
+            $("#planet2").selectmenu();
+            $("#youtube").slider();
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+        <form action="POST">
+            <label for="planet">Select Your Desired Planet</label>
+            <select name="planet" id="planet">
+                <option value="mars">Mars</option>
+                <option value="earth" selected>Earth</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="neptune">Neptune</option>
+            </select>
+        </form>
+
+    </div>
+
+    <div class="google" id="google">
+
+            <form action="POST">
+                    <label for="planet2">Select Your Desired Planet</label>
+                    <select name="planet" id="planet2">
+                        <optgroup label="Goldilocks Planet">
+                                <option value="mars">Mars</option>
+                                <option value="earth" selected>Earth</option>
+                        </optgroup>
+                        
+                        <optgroup label="Non Habitable Planet">
+                                <option value="jupiter">Jupiter</option>
+                                <option value="saturn">Saturn</option>
+                                <option value="neptune">Neptune</option>
+                        </optgroup>
+
+                    </select>
+                </form>
+
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">
+
+         
+
+    </div>
+
+
+</body>
+
+</html>

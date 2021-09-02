@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Droppable</title>
+
+    <style>
+        .facebook {
+
+            background-color: #0686FD;
+            padding: 10px;
+            width: 300px;
+            color: azure;
+            height: auto;
+            border: 5px solid white;
+            padding: 40px;
+        }
+
+        .google {
+
+            background-color: #b24926;
+            height: auto;
+            color: azure;
+            padding: 10px;
+        }
+
+        #span {
+            color: crimson;
+            font-size: 30px;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: auto;
+            width: auto;
+            color: azure;
+        }
+
+        td {
+            border: 10px solid #1CAC8D;
+        }
+
+
+        #list li{
+            list-style: none;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 5px;
+            
+        }
+
+        #list{
+            padding: 0px;
+        }
+
+        #list .ui-selecting{
+            background:rgb(11, 122, 98);
+            
+            color: white;
+        }
+
+        #list .ui-selected{
+            background:rgb(78, 173, 153);
+            color: white;
+            
+        }
+
+       
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+           $("#list").selectable({
+               stop: function(){
+                   $(".ui-selected").each(function(){
+
+                       $("<p></p>").text($(this).text()).appendTo("#google");
+
+                   });
+               }
+           });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+    
+        <ul id="list">
+            <li class="ui-state-default">Javascript</li>
+            <li class="ui-state-default">Python</li>
+            <li class="ui-state-default">C#</li>
+        </ul>
+    
+    </div>
+    
+    <div class="google" id="google">
+    
+    </div>
+
+    <div class="youtube ui-corner-all" id="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+    </div>
+
+    <div class="ui-state-error ui-corner-all"<p>Alert Division</p></div>
+
+    <button style="cursor: pointer;" id="changeFacebook">Change Facebook Div Style</button>
+
+    <button style="cursor: pointer;" id="changeClass">Change Class of An Element</button>
+
+    <button style="cursor: pointer;" id="removeClass">Remove Class of An Element</button>
+
+
+</body>
+
+</html>

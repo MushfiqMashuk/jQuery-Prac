@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        
+        .facebook{
+
+            background-color: #0686FD;
+            padding: 5px;
+            width: auto;
+            color: azure;
+            height: auto;
+        }
+
+        .google{
+            
+            background-color: aqua;
+            height: auto;
+            width: auto;
+            color: azure;
+            padding: 10px;
+        }
+
+        #span{
+            color:crimson;
+            font-size: 30px;
+            
+        }
+
+        .youtube{
+            background-color:rgb(28, 172, 141);
+            height: auto;
+            width: auto;
+            color: azure;
+        }
+
+        td{
+            border: 10px solid rgba(128, 128, 128, 0);
+        }
+    
+    </style>
+
+
+    <script>
+        
+        $(function(){
+
+            $("#div1 p").css("color", "violet");
+
+            $("#div1 > p").css("color", "yellow");
+            
+            $(".google").css("font-size", "30px");
+            
+            $(".facebook").css("font-size", "30px"); //Selects the Div element of 'facebook' class
+            
+            $("div p").css("text-align", "center");
+
+            $("div ~ p").css("text-align", "center");
+
+            $("div ~ p").css("font-family", "cursive");
+
+            $("div ~ p").css("font-size", "30px");
+
+            $("p:first-child").css("font-size","40px");
+            $("p:first-child").css("text-decoration","underline");
+
+            $("p:last-child").css("font-weight","bold");
+
+            var a = $("p:first-child, p:last-child");
+
+            a.css("color", "red");
+
+
+
+            $("[href]").css("color","green");
+
+            $("ul li:first-child").css("font-size","20px");
+
+            $("td:even").css("background-color","green");
+            
+            $("tr:odd").css("background-color","red");
+
+            var inputs = $(":input");
+
+            inputs.css("background-color", "grey");
+
+            $(":button").css("background-color", "red");
+
+            inputs.css("border", "none");
+
+            inputs.css("padding","3px");
+
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+    <div class="facebook" id="div1">
+        <p>This is another Paragraph</p>
+        <p>Facebook is <span id="span">Awesome</span>
+            <div><p>This 'P' element is Not a direct child</p></div>
+        </p>
+        <h2>This is a Heading</h2>
+    </div>
+    <p>This is a Normal Paragraph</p>
+    <div class="google">
+            <p><a href="#">Google</a></p>
+            <p>Instagram</p>
+            <p><a href="#">Microsoft</a></p>
+
+            <ul>
+                <li>MIT</li>
+                <li>Princeton</li>
+                <li>Harvard</li>
+                <li>Zurikh Politecnic</li>
+            </ul>
+
+        <p>This is some input field <input type="text"><button type="submit">Submit</button></p>
+        <p></p>
+
+
+    </div>
+
+    
+    <div class="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+        <table>
+
+            <tr><th>Product ID</th> <th>Product Name</th> <th>Brand Name</th></tr>
+
+            <tr><td>01</td> <td>Mutton Kachchi</td> <td>Sultan's Dine</td></tr>
+
+            <tr><td>02</td> <td>Mutton Kachchi</td> <td>Kolkata Biryani House</td></tr>
+
+            <tr><td>03</td> <td>Sharbat(Pesta Badam)</td> <td>Royal Restaurant</td></tr>     
+
+
+        </table>
+    </div>
+
+    <button class="facebook" style="cursor: pointer;">Facebook</button>
+
+</body>
+</html>

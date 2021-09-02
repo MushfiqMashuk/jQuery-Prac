@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Droppable</title>
+
+    <style>
+        .facebook {
+
+            background-color: #0686FD;
+            padding: 10px;
+            width: 300px;
+            color: azure;
+            height: auto;
+            border: 5px solid white;
+        }
+
+        .google {
+
+            background-color: #b24926;
+            height: auto;
+            width: auto;
+            color: azure;
+            padding: 10px;
+        }
+
+        #span {
+            color: crimson;
+            font-size: 30px;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: auto;
+            width: auto;
+            color: azure;
+        }
+
+        td {
+            border: 10px solid #1CAC8D;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+            var message = ["Leave Me Alone!", "Drop Me", "Please", "Release Me"];
+
+            $("#facebook").draggable({
+
+                revert: true,
+
+                drag: function(){
+                
+                    $("#facebook").css("background-color","rgb("+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+','+Math.floor(Math.random()*256)+")");
+                    
+                    $("#facebook").find("#innerDiv").html("<p>" + message[Math.floor(Math.random()*4)] + "</p>");
+
+
+                },
+
+                stop: function(){
+
+                    $("#facebook").find("p").html("Ahh!! Finally!");
+
+                } 
+
+
+            });
+
+            $("#biryani").find("li").draggable({
+                helper: "clone",
+                appendTo: "body"
+            });
+
+
+            $("#google").droppable({
+
+                drop: function(event, ui){
+                    $("#google").css("background-color","aqua");
+
+                    const el = ui.draggable.text();
+                    console.log(el);
+
+                    $(this).find("p").remove();
+
+                    $("<p></p>").text(el).appendTo(this);
+
+                    //$("#university li").text(el);
+
+                },
+        
+                accept: "#biryani li"
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        <p>This is another Paragraph</p>
+        <p>Facebook is <span id="span">Awesome</span>
+            <div id="innerDiv">
+                <p>This 'P' element is Not a direct child</p>
+            </div>
+        </p>
+        <h2>This is a Heading</h2>
+    </div>
+
+    <ul id="biryani">
+        <li>Kachchi</li>
+        <li>Morog Polao</li>
+        <li>Tehari</li>
+    </ul>
+
+    <p>This is a Normal Paragraph <br> <br><button id="ajax">Change Content With Ajax</button></p>
+    <div class="google" id="google">
+        <p><a href="https://google.com" title="Google" target="_blank" id="googleA">Google</a></p>
+        <p>Instagram</p>
+        <p><a href="https://microsoft.com" target="_blank" title="Microsoft">Microsoft</a></p>
+
+        <ul id="university">
+            <li>MIT</li>
+            <li>Princeton</li>
+            <li>Harvard</li>
+            <li>Zurikh Politecnic</li>
+        </ul>
+
+        <p>This is some input field <input type="text" id="input"><button type="submit" id="submit">Submit</button>
+            <button id="fadeFacebook">Fade out Facebook Class</button></p>
+        <p><button id="fadeIn">Fade in Facebook</button><button id="dblClick">Double Click on This to See magic
+                happens</button></p>
+
+
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+        <table>
+
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Brand Name</th>
+            </tr>
+
+            <tr>
+                <td>01</td>
+                <td>Mutton Kachchi</td>
+                <td>Sultan's Dine</td>
+            </tr>
+
+            <tr>
+                <td>02</td>
+                <td>Mutton Kachchi</td>
+                <td>Kolkata Biryani House</td>
+            </tr>
+
+            <tr>
+                <td>03</td>
+                <td>Sharbat(Pesta Badam)</td>
+                <td>Royal Restaurant</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <div class="ui-state-error ui-corner-all"<p>Alert Division</p></div>
+
+    <button style="cursor: pointer;" id="changeFacebook">Change Facebook Div Style</button>
+
+    <button style="cursor: pointer;" id="changeClass">Change Class of An Element</button>
+
+    <button style="cursor: pointer;" id="removeClass">Remove Class of An Element</button>
+
+
+</body>
+
+</html>

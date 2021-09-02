@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Change Content & Attributes</title>
+
+    <style>
+        
+            .facebook{
+    
+                background-color: #0686FD;
+                padding: 10px;
+                width: 300px;
+                color: azure;
+                height: auto;
+                border: 5px solid white;
+            }
+    
+            .google{
+                
+                background-color: aqua;
+                height: auto;
+                width: auto;
+                color: azure;
+                padding: 10px;
+            }
+    
+            #span{
+                color:crimson;
+                font-size: 30px;
+                
+            }
+    
+            .youtube{
+                background-color:rgb(28, 172, 141);
+                height: auto;
+                width: auto;
+                color: azure;
+            }
+    
+            td{
+                border: 10px solid #1CAC8D;
+            }
+        
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script>
+            
+            $(function(){
+                var i = 0;
+
+                $("#changeFacebook").click(function(){
+
+                    i++;
+
+                    $("#facebook").width($("#facebook").width() + Math.floor(Math.random()*100-50)); 
+
+                    if(i === 1){
+                        $("#facebook").after("<p>Width: <span id='show'>" + Math.random() + "</span> </p> <p>Inner Width: <span id='show1'></span> </p> <p>Outer Width: <span id='show2'></span> </p>");
+                    }
+
+                    
+                    $("#show").text($("#facebook").width());
+                    
+                    $("#show1").text($("#facebook").innerWidth());
+
+                    $("#show2").text($("#facebook").outerWidth());
+
+                    //$("#show").children("span").text($("#facebook").width());
+
+                    //$("#facebook").css("width", 500);
+                });
+
+                $("#changeClass").click(function(){
+                    $(".google").addClass("youtube");
+                });
+
+
+                $("#removeClass").click(function(){
+
+                    $(".google").removeClass("youtube");
+                    
+                });
+
+                $("#google").click(function(){
+                    $("#google").css("background-color", "rgb("+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+")");
+                });
+
+                var c = 0;
+
+                $("#toggleClass").click(function(){
+
+                    c++;
+                    $("#facebook").fadeToggle(300, function(){
+                        if(c%2===0){
+                            alert("Facebook is back!");
+                        }
+                        else alert("Faded out!");
+                    });
+                   //  $("#facebook").slideToggle("facebook");
+                   // $("#facebook").toggleClass("facebook"); //This method toggles class
+
+                });
+
+
+                $("#wrap").click(function(){
+
+                    $("#span").wrap("<div></div>");
+
+                });
+
+                $("#dblClick").dblclick(function(){
+
+                    setInterval(function(){
+                        $("body").css("background-color", "rgb("+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+")");
+                    }, 100);
+
+                });
+
+            });
+
+        
+        
+        </script>
+    
+</head>
+<body>
+
+    <div class="facebook" id="facebook">
+        <p>This is another Paragraph</p>
+        <p>Facebook is <span id="span">Awesome</span>
+            <div><p>This 'P' element is Not a direct child</p></div>
+        </p>
+        <h2>This is a Heading</h2>
+    </div>
+    <p>This is a Normal Paragraph</p>
+    <div class="google" id="google">
+            <p><a href="https://google.com" title="Google" target="_blank" id="googleA">Google</a></p>
+            <p>Instagram</p>
+            <p><a href="https://microsoft.com" target="_blank" title="Microsoft">Microsoft</a></p>
+
+            <ul>
+                <li>MIT</li>
+                <li>Princeton</li>
+                <li>Harvard</li>
+                <li>Zurikh Politecnic</li>
+            </ul>
+
+        <p>This is some input field <input type="text" id="input"><button type="submit" id="submit">Submit</button> <button id="toggleClass">Toggle Facebook Class</button></p>
+        <p><button id="wrap">Wrap an Element</button><button id="dblClick">Double Click on This to See magic happens</button></p>
+
+
+    </div>
+
+    
+    <div class="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+        <table>
+
+            <tr><th>Product ID</th> <th>Product Name</th> <th>Brand Name</th></tr>
+
+            <tr><td>01</td> <td>Mutton Kachchi</td> <td>Sultan's Dine</td></tr>
+
+            <tr><td>02</td> <td>Mutton Kachchi</td> <td>Kolkata Biryani House</td></tr>
+
+            <tr><td>03</td> <td>Sharbat(Pesta Badam)</td> <td>Royal Restaurant</td></tr>     
+
+
+        </table>
+    </div>
+
+    <button style="cursor: pointer;" id="changeFacebook">Change Facebook Div Style</button>
+
+    <button style="cursor: pointer;" id="changeClass">Change Class of An Element</button>
+
+    <button style="cursor: pointer;" id="removeClass">Remove Class of An Element</button>
+
+
+</body>
+</html>

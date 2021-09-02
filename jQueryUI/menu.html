@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Accordion</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+            padding: 20px;
+            width: auto;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: 200px;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        .ui-menu{
+            width: 200px;
+        }
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            
+            $("#product").menu();
+            $("#product2").menu();
+            
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+        <ul id="product">
+
+            <li>Nababi Voj
+                <ul>
+                    <li>Breakfast
+                        <ul>
+                            <li>Paya(Beef)</li>
+                            <li>Nehari(Mutton)</li>
+                            <li>Murgi Musallam</li>
+                        </ul>
+                    </li>
+                    <li>Lunch
+                        <ul>
+                            <li>Mutton Kachchi</li>
+                            <li>Beef Tehari</li>
+                            <li>Morog Polao</li>
+                        </ul>
+                    </li>
+                    <li>Dinner
+                        <ul>
+                            <li>Mutton Kachchi</li>
+                            <li>Beef Tehari</li>
+                            <li>Morog Polao</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Milk Vita</li>
+            <li>Haji Biryani</li>
+            <li>Aarong</li>
+            <li>Kolkata Kachchi</li>
+
+        </ul>
+
+    </div>
+
+    <div class="google" id="google">
+
+            <ul id="product2">
+
+                    <li class="ui-widget-header">Nababi Voj</li>
+                        
+                            <li>Breakfast
+                                <ul>
+                                    <li>Paya(Beef)</li>
+                                    <li>Nehari(Mutton)</li>
+                                    <li>Murgi Musallam</li>
+                                </ul>
+                            </li>
+                            <li>Lunch
+                                <ul>
+                                    <li>Mutton Kachchi</li>
+                                    <li>Beef Tehari</li>
+                                    <li>Morog Polao</li>
+                                </ul>
+                            </li>
+                            <li>Dinner
+                                <ul>
+                                    <li>Mutton Kachchi</li>
+                                    <li>Beef Tehari</li>
+                                    <li>Morog Polao</li>
+                                </ul>
+                            </li>
+                    <li class="ui-widget-header">Milk Vita</li>
+                    <li class="ui-widget-header">Haji Biryani</li>
+                    <li class="ui-widget-header">Aarong</li>
+                    <li class="ui-widget-header">Kolkata Kachchi</li>
+        
+                </ul>
+
+    </div>
+
+
+</body>
+
+</html>

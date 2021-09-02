@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Droppable</title>
+
+    <style>
+        .facebook {
+
+            background-color: #0686FD;
+            padding: 10px;
+            width: 300px;
+            color: azure;
+            height: auto;
+            border: 5px solid white;
+        }
+
+        .google {
+
+            background-color: #b24926;
+            height: 100px;
+            
+            color: azure;
+            padding: 10px;
+        }
+
+        #span {
+            color: crimson;
+            font-size: 30px;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: auto;
+            width: auto;
+            color: azure;
+        }
+
+        td {
+            border: 10px solid #1CAC8D;
+        }
+
+        #container{
+            width: 400px;
+            height: 200px;
+            border: 1px dotted black;
+        }
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+            $("#facebook").resizable({
+                maxWidth: 800,
+                minWidth: 300,
+                maxHeight: 500,
+                minHeight: 300,
+                ghost: true,
+                aspectRatio: 16/9
+            });
+
+            $("#google").resizable({
+                containment: "#container",
+                animate: true,
+                //alsoResize: "#facebook"
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        <p>This is another Paragraph</p>
+        <p>Facebook is <span id="span">Awesome</span>
+            <div id="innerDiv">
+                <p>This 'P' element is Not a direct child</p>
+            </div>
+        </p>
+        <h2>This is a Heading</h2>
+    </div>
+
+    <div id="container">
+        <div class="google" id="google">
+    
+        </div>
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+    </div>
+
+    <div class="ui-state-error ui-corner-all"<p>Alert Division</p></div>
+
+    <button style="cursor: pointer;" id="changeFacebook">Change Facebook Div Style</button>
+
+    <button style="cursor: pointer;" id="changeClass">Change Class of An Element</button>
+
+    <button style="cursor: pointer;" id="removeClass">Remove Class of An Element</button>
+
+
+</body>
+
+</html>

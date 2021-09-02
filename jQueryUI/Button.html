@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Accordion</title>
+
+    <style>
+        .facebook {
+            width: 400px;
+            height: 200px;
+            background-color: aqua;
+            border: 5px solid white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: 200px;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+            $("#btn1").button({
+                icons: {
+                    primary: "ui-icon-circle-plus",
+                    secondary: "ui-icon-circle-plus"
+                },
+            });
+
+            $("#btn2").button({
+                icons: {
+                    primary: "ui-icon-trash"
+                },
+
+                text: false
+
+            });
+
+            $("#google").buttonset();
+
+            $("#form").buttonset();
+
+
+            
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+        <button id="btn1">Submit</button>
+        <button id="btn2">Delete</button>
+
+    </div>
+
+    <div class="google" id="google">
+
+        <input type="checkbox" id="checkbox1"> <label for="checkbox1">Mars</label>
+        <input type="checkbox" id="checkbox2"> <label for="checkbox2">Europa</label>
+        <input type="checkbox" id="checkbox3"> <label for="checkbox3">Earth</label>
+
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">
+
+        <form action="POST">
+            <div id="form">
+                <input type="radio" id="radioBtn1" name="nice"> <label for="radioBtn1">Mars</label>
+                <input type="radio" id="radioBtn2" name="nice"> <label for="radioBtn2">Europa</label>
+                <input type="radio" id="radioBtn3" name="nice"> <label for="radioBtn3">Earth</label>
+            </div>
+        </form>       
+
+    </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

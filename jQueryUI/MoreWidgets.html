@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Spinner,Tabs</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: auto;
+            height: auto;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        #salary{
+            width: 300px;
+        }
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+
+        $(function() {
+            
+            $("#spinner").spinner({
+                min: 0, max: 120, step: 5
+            })
+
+            $("#tabs").tabs({
+                collapsible: true,
+                //event: "mouseover"
+
+            });
+
+            $("#tabs").tabs().find(".ui-tabs-nav").sortable({axis: "x"});
+
+            //$(document).tooltip();
+
+            $("#spinner").tooltip({show: {effect: "slideDown"}});
+
+        });
+
+        
+    </script>
+
+
+    
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+
+        <p>
+            <label for="spinner">Select Your Age</label>
+            <input type="text" name="spinner" id="spinner" value="20" readonly title="Choose a Value">
+        </p>
+        
+    </div>
+
+    
+    <div class="google" id="google">
+
+        <div id="tabs">
+            <ul title="Learn Astronomy">
+                <li><a href="#superNova">Super Nova</a></li>
+                <li><a href="#newtronStar">Newtron Star</a></li>
+                <li><a href="#singularity">Singularity</a></li>
+            </ul>
+            
+            <div id="superNova">Super Nova Blast is occured when a star dies</div>
+            <div id="newtronStar">1 Mili Gram of Newtron Star weight more than the total popultation on Earth</div>
+            <div id="singularity">Singularity is where Event Horizon lies</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">    
+        
+    </div>
+
+
+</body>
+
+</html>

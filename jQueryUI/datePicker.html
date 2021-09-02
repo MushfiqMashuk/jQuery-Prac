@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Date Picker</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: 200px;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            
+            $("#datePicker").datepicker({
+                dateFormat: "dd-mm-yy",
+                showAnim: "slideDown",
+                changeYear: true,
+
+                onClose: function(selectedDate){
+
+                    $ ("#datePicker2").datepicker("option", "minDate",selectedDate)
+                    
+                },
+
+                showWeek: true
+            });
+
+            $("#datePicker2").datepicker({
+                dateFormat: "dd-mm-yy",
+                showWeek: true
+            });
+
+           
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+        <p>Starting Day of your Journey To Mars: <input type="text" id="datePicker"></p>
+        <p>Return Date to Earth: <input type="text" id="datePicker2"></p>
+
+        <a href="Dialog.html" style="color: azure; font-weight: bold;"><p>Dialog Page</p></a>
+
+    </div>
+
+    <div class="google" id="google">
+
+        
+
+    </div>
+
+
+    <div class="youtube ui-corner-all" id="youtube">
+
+         
+
+    </div>
+
+
+</body>
+
+</html>

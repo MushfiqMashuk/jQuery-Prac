@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Sortable</title>
+
+    <style>
+        .facebook {
+
+            background-color: #0686FD;
+            padding: 10px;
+            width: 300px;
+            color: azure;
+            height: auto;
+            border: 5px solid white;
+            padding: 40px;
+            float: left;
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: auto;
+            color: azure;
+            padding: 40px;
+            float: right;
+        }
+
+        .clearfix{
+            clear: both;
+        }
+
+        #span {
+            color: crimson;
+            font-size: 30px;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: auto;
+            width: auto;
+            color: azure;
+        }
+
+        td {
+            border: 10px solid #1CAC8D;
+        }
+
+
+        li{
+            list-style: none;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 5px;
+
+        }
+
+        #list, #list2 {
+            padding: 0px;
+        }
+
+        .connectedList{
+            min-height: 20px;
+        }
+
+
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+            $("#list").sortable({
+                placeholder: ".ui-state-highlight",
+                cancel: ".notSortable"
+            });
+
+            $("#list, #list2").sortable({
+                connectWith: ".connectedList"
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+
+        <ul id="list" class="connectedList">
+            <li class="ui-state-default">Javascript</li>
+            <li class="ui-state-default">Python</li>
+            <li class="ui-state-default">C#</li>
+            <li class="ui-state-default notSortable">Php</li>
+        </ul>
+
+    </div>
+
+    <div class="google" id="google">
+
+        <ul id="list2" class="connectedList">
+
+            <li class="ui-state-default">Milkyway</li>
+            <li class="ui-state-default">Andromeda</li>
+            <li class="ui-state-default">Alpha Century</li>
+            <li class="ui-state-default notSortable">The Sun</li>
+
+        </ul>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="youtube ui-corner-all" id="youtube">
+        <p>Youtube</p>
+        <p>Amazon</p>
+
+    </div>
+
+    <div class="ui-state-error ui-corner-all" <p>Alert Division</p>
+    </div>
+
+
+
+</body>
+
+</html>

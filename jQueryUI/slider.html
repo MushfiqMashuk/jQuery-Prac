@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Slider</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: auto;
+            height: auto;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+
+        #salary{
+            width: 300px;
+        }
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+
+        $(function() {
+            
+            $("#facebook").slider({
+                slide: function(event, ui){
+                    $("#age").val(ui.value);
+                    console.log(ui);
+                },
+                max: 50,
+                min: 0 
+            });
+
+
+            $("#google").slider({
+
+                range: true, min: 10000, max: 200000, step: 5000,
+
+                values: [10000, 20000],
+
+                slide: function(event, ui){
+                    $("#salary").val("Starting Salary "+ ui.values[0] + " To " + ui.values[1] + " Taka");
+                }
+
+            });
+
+            $("#age").val(0);
+
+            $("#salary").val(
+                
+                "Starting Salary " + 10000 + " To " + 20000 + " Taka");
+
+        });
+
+        
+    </script>
+
+
+    
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+    </div>
+
+    <br>
+
+    <label for="facebook">Select Your Age</label>
+    <input type="text" name="age" id="age" readonly>
+
+    <br> <br>
+
+    <div class="google" id="google">
+
+    </div>
+    <br>
+
+    <label for="google">Select Your Expected Salary Range</label>
+    <input type="text" name="salary" id="salary" readonly> <br> <br>
+
+
+
+    <div class="youtube ui-corner-all" id="youtube">    
+        
+    </div>
+
+    
+
+
+</body>
+
+</html>

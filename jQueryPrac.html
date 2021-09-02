@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>jQuery Practice</title>
+
+   <!--<script src="js/jquery-3.4.1.js"></script>-->
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--Using jQuery CDN which is better-->
+   
+
+   <script>
+    
+      $(document).ready(
+
+         function(){
+
+            $("p").click(function(){
+               $(this).hide();
+            });
+
+
+            $("#div1").click(function(){
+               $(this).hide();
+            })
+
+
+            var p = document.createElement("p");
+
+            p.innerHTML = "Newly Created Paragraph";
+
+            document.getElementsByTagName("body")[0].appendChild(p);
+
+            $("#button").click(
+               function(){
+                  
+                  $("ul li:first").hide();
+                  
+               }
+            );
+
+
+         }
+
+      );
+
+      // Document.ready() method can also
+      
+   </script>
+   
+
+</head>
+<body>
+    <p>Click me to hide</p>
+    <p id="div2">This is Also gonna hide</p>
+
+    <ul style="list-style: none; padding: 0px;">
+
+      <li>Dhaka</li>
+      <li>Sylet</li>
+      <li>Rangpur</li>
+      <br>
+      <button id="button">Click To Disappeare Dhaka</button>
+
+      <br><br>
+
+      <input type="file" value="Choose file" name="file">
+
+    </ul>
+   
+</body>
+</html>
+
+      
+     

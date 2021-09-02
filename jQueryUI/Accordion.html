@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Accordion</title>
+
+    <style>
+        .facebook {
+
+            width: 400px;
+            color: azure;
+            height: auto;
+            border: 5px solid white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: auto;
+            color: azure;
+
+        }
+
+        .link{
+            text-decoration: none;
+        }
+
+        .link :hover{
+            text-decoration: underline;
+        }
+
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+
+
+            $("#facebook").accordion({
+                collapsible: true,
+                heightStyle: "fill",
+
+                icons: {header: "ui-icon-circle-triangle-e", activeHeader: "ui-icon-circle-triangle-s"}
+            });
+
+            $("#resizer").resizable({
+                resize: function(){
+                    $("#facebook").accordion("refresh");
+                }
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="resizer" class="ui-widget-content">
+        <div class="facebook" id="facebook">
+
+            <h3>Dhaka To Rangpur</h3>
+            <div>
+                <a href="#" class="link"><p>Nabil Poribohon</p></a>
+                <a href="#" class="link"><p>Dipjol Poribohon</p></a>
+                <a href="#" class="link"><p>SR Travels</p></a>
+                <a href="#" class="link"><p>Hanif Enterprise</p></a>
+            </div>
+    
+            <h3>Rangpur To Sylet</h3>
+            <div>
+                <a href="#" class="link"><p>Nabil Poribohon</p></a>
+                <a href="#" class="link"><p>Dipjol Poribohon</p></a>
+                <a href="#" class="link"><p>SR Travels</p></a>
+                <a href="#" class="link"><p>Hanif Enterprise</p></a>
+            </div>
+            
+            <h3>Dhaka To Rajshahi</h3>
+            <div>
+                <a href="#" class="link"><p>Nabil Poribohon</p></a>
+                <a href="#" class="link"><p>Dipjol Poribohon</p></a>
+                <a href="#" class="link"><p>SR Travels</p></a>
+                <a href="#" class="link"><p>Hanif Enterprise</p></a>
+                <a href="#" class="link"><p>Desh Travels</p></a>
+    
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="google" id="google">
+
+        
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="youtube ui-corner-all" id="youtube">
+        
+
+    </div>
+
+    
+    </div>
+
+
+</body>
+
+</html>

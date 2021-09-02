@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Change Content & Attributes</title>
+
+    <style> 
+           
+            #ball{
+                background-color: brown;
+                width: 30px;
+                height: 30px;
+                border-radius: 30px;
+            }
+
+            #lathi{
+                background-color: black;
+                width: 1200px;
+                height: 10px;
+                position: absolute;
+                top: 430px;
+                
+            }
+
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <script>
+            
+            $(function(){
+
+                var i = 0;
+                var j = 600;
+
+                var a = setInterval(function(){
+                    
+                    if(i<=400){
+                        $("#ball").css("position","absolute");
+
+                        $("#ball").css({top: i++, left: j});
+                    }
+
+                    if(i > 400 && j < 1208){
+                        //clearInterval(a);
+                        $("#ball").css({top: i, left: j++});
+                    }
+
+                    if(j===1208){
+                        $("#ball").css({top: i++, left: j});
+                    }
+
+                    if(window.innerHeight - 29 === i){
+                     
+                        clearInterval(a);
+                        
+                    }
+                }, 10);
+
+            });
+
+        
+        
+        </script>
+    
+</head>
+<body>
+
+
+    <div id="ball"></div>
+    <div id="lathi"></div>
+
+
+</body>
+</html>

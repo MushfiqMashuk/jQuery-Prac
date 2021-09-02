@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Accordion</title>
+
+    <style>
+        .facebook {
+            
+            height: 200px;
+            background-color: #4267B2;
+            border: 5px solid white;
+            color: white;
+
+        }
+
+        .google {
+
+            background-color: #b24926;
+            width: 300px;
+            height: 200px;
+            color: azure;
+
+        }
+
+        .youtube {
+            background-color: rgb(28, 172, 141);
+            height: 200px;
+            width: 300px;
+            color: azure;
+        }
+        
+
+        
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            
+            $("#dialog").dialog({
+                autoOpen: false
+            });
+
+            $("#open").button();
+
+            $("#open").click(function(){
+                
+                $("#dialog").dialog("open");
+            });
+
+            $("#previousPage").dialog({
+                autoOpen: false,
+                modal: true,
+
+                buttons: {
+
+                    "Yes! Go Back": function(){ window.history.back(); },
+
+                    "Cancel": function(){ $(this).dialog("close"); }
+                }
+            });
+
+            $("#previous").button().click(function(){
+                
+                $("#previousPage").dialog("open");
+                
+            });
+            
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="facebook" id="facebook">
+        
+
+
+    </div>
+
+    <div class="google" id="google">
+
+        
+
+    </div>
+
+
+    <div id="dialog" title="We Use Cookie">
+
+        <p>We Use Cookie for Analysis and Advertisement</p>
+    
+    </div>
+
+    <div id="previousPage" title="Are u sure?">
+
+        <p> <span class="ui-icon ui-icon-alert"></span> If u go back, your saved data will be lost. Do u want to continue?</p>
+    
+    </div>
+
+    <button id="open">Click To Open Dialog Box</button>
+    <button id="previous">Go to previous page</button>
+
+
+</body>
+
+</html>
